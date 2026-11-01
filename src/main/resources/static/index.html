@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ClassMate</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--n:#202C45;--i:#6366F1;--bg:#F8FAFC;--ok:#16A34A;--wn:#F59E0B;--dg:#EF4444;--bd:#E2E8F0;--mu:#64748B;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--n);font:14px/1.5 'Plus Jakarta Sans',Inter,system-ui,sans-serif}
+header{display:flex;align-items:center;gap:16px;padding:12px 24px;background:#fff;border-bottom:1px solid var(--bd)}
+.br{display:flex;align-items:center;gap:10px;font-size:18px}.br svg{width:32px;height:32px}
+.dt{margin-left:auto;color:var(--mu)}.tn{font-weight:600}
+nav{display:flex;gap:4px;padding:8px 24px;background:#fff;border-bottom:1px solid var(--bd);overflow-x:auto}
+nav button{display:flex;align-items:center;gap:8px;padding:8px 14px;border:0;background:none;border-radius:8px;color:var(--mu);font:inherit;font-weight:500;cursor:pointer;white-space:nowrap;transition:.15s}
+nav button:hover{background:var(--bg);color:var(--n)}nav button.on{background:var(--n);color:#fff}
+main{max-width:1100px;margin:0 auto;padding:24px}
+h2{margin:0 0 4px;font-size:22px}h3{margin:0 0 12px;font-size:16px}.mu{color:var(--mu);margin:0 0 16px}
+.card{background:#fff;border:1px solid var(--bd);border-radius:12px;padding:20px;margin-bottom:20px;box-shadow:0 1px 2px rgba(15,23,42,.04)}
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:20px}
+.st{background:#fff;border:1px solid var(--bd);border-radius:12px;padding:14px 16px}.st span{color:var(--mu);font-size:13px}.st b{display:block;font-size:26px}
+.act{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.ac{display:flex;flex-direction:column;align-items:flex-start;gap:8px;text-align:left;background:#fff;border:1px solid var(--bd);border-radius:12px;padding:24px;cursor:pointer;font:inherit;color:inherit;transition:.15s}
+.ac:hover{border-color:var(--i);box-shadow:0 4px 14px rgba(99,102,241,.12);transform:translateY(-1px)}
+.ac svg{color:var(--i)}.ac b{font-size:17px}.ac span{color:var(--mu)}
+.b{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border:1px solid var(--bd);border-radius:8px;background:#fff;color:var(--n);font:inherit;font-weight:500;cursor:pointer;transition:.15s}
+.b:hover{background:var(--bg);border-color:#CBD5E1}.b:active{transform:scale(.98)}
+.b.p{background:var(--n);border-color:var(--n);color:#fff}.b.p:hover{background:#2D3B5E}
+.b.dg{background:#FEF2F2;border-color:#FECACA;color:#B91C1C}.b.dg:hover{background:#FEE2E2}
+.b:disabled{opacity:.5;cursor:not-allowed}
+.ib{display:inline-grid;place-items:center;width:30px;height:30px;padding:0;border:1px solid var(--bd);border-radius:8px;background:#fff;color:var(--mu);cursor:pointer}.ib:hover{color:var(--n);background:var(--bg)}.ib.dg:hover{color:var(--dg);background:#FEF2F2}
+:focus-visible{outline:2px solid var(--i);outline-offset:2px}
+input,select{font:inherit;padding:8px 10px;border:1px solid var(--bd);border-radius:8px;background:#fff;color:var(--n);min-width:0}
+input:focus,select:focus{outline:2px solid var(--i);border-color:var(--i)}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end;margin-bottom:16px}
+.row label{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--mu)}.row .sp{margin-left:auto}
+.tw{overflow-x:auto;border:1px solid var(--bd);border-radius:12px;background:#fff}
+table{border-collapse:collapse;width:100%}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--bd);white-space:nowrap}
+th{background:#F1F5F9;font-weight:600;vertical-align:top}tr:last-child td{border-bottom:0}
+.sk{position:sticky;left:0;background:inherit;min-width:76px}.sk2{position:sticky;left:76px;background:inherit}
+td.sk,td.sk2{background:#fff}
+th.c{text-align:center}td.c{text-align:center}
+.ch{display:flex;align-items:center;gap:4px}.ch span{margin-right:4px}
+.lk{border:0;background:none;color:var(--i);font:inherit;font-size:12px;padding:2px 0;cursor:pointer}
+input[type=checkbox]{width:18px;height:18px;accent-color:var(--ok);cursor:pointer;padding:0}
+.gr{display:grid;grid-template-columns:repeat(auto-fill,minmax(56px,1fr));gap:8px;margin:12px 0 20px}
+.rb{position:relative;height:46px;border:1px solid var(--bd);border-radius:10px;background:#fff;font:inherit;font-weight:600;color:var(--n);cursor:pointer;transition:.12s}
+.rb:hover{border-color:var(--i)}.rb i{position:absolute;top:1px;right:5px;font-size:10px;font-style:normal}
+.rb.p{background:var(--ok);border-color:var(--ok);color:#fff}.rb.a{background:var(--dg);border-color:var(--dg);color:#fff}
+.lg{display:flex;gap:16px;color:var(--mu);font-size:13px;flex-wrap:wrap}.lg span:before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;background:#fff;border:1px solid #CBD5E1}
+.lg .p:before{background:var(--ok);border-color:var(--ok)}.lg .a:before{background:var(--dg);border-color:var(--dg)}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:12px 0}
+.tag{display:inline-block;padding:2px 8px;border-radius:99px;font-size:12px;font-weight:600}
+.tag.s{background:#EEF2FF;color:#4338CA}.tag.t{background:#ECFDF5;color:#15803D}
+.em{text-align:center;padding:36px 16px;color:var(--mu)}
+.hi{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--bd);flex-wrap:wrap}.hi:last-child{border:0}.hi .x{flex:1;min-width:200px}
+.mb{position:fixed;inset:0;background:rgba(15,23,42,.45);display:grid;place-items:center;padding:16px;z-index:20}
+.md{background:#fff;border-radius:12px;padding:22px;width:min(520px,100%);max-height:88vh;overflow:auto}
+.mf{display:flex;justify-content:flex-end;gap:8px;margin-top:18px}
+.md label{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--mu);margin-bottom:10px}.md input,.md textarea{width:100%}
+textarea{font:inherit;padding:8px 10px;border:1px solid var(--bd);border-radius:8px;width:100%;min-height:120px}
+#t{position:fixed;bottom:16px;right:16px;display:flex;flex-direction:column;gap:8px;z-index:30}
+.ts{background:var(--n);color:#fff;padding:10px 14px;border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.2);border-left:4px solid var(--ok);animation:in .2s}.ts.e{border-color:var(--dg)}
+@keyframes in{from{opacity:0;transform:translateY(6px)}}
+#print{display:none}
+@media print{#app,#m,#t{display:none!important}#print{display:block;padding:24px}body{background:#fff}}
+@media(max-width:640px){header,nav,main{padding-left:14px;padding-right:14px}.dt{display:none}header .tn{margin-left:auto}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+<div id="app"></div><div id="m"></div><div id="t"></div><div id="print"></div>
+<script>
+const $=s=>document.querySelector(s),K='classmate_v1';
+const today=()=>{const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};
+const fresh=()=>({teacher:'Teacher',students:[],cols:[1,2,3].map(n=>({id:'c'+n,name:'Assignment '+n})),sub:{},att:{date:today(),cls:'',start:1,end:60,marks:{}},hist:[]});
+let S=null;
+S=fresh();
+let st;const save=()=>{clearTimeout(st);st=setTimeout(()=>fetch('/api/state',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(S)}).then(r=>{if(!r.ok)throw 0}).catch(()=>toast('Could not save to the server.','e')),150)};
+let U={view:'ov',filter:'all',sum:null,rep:null,hDate:''},M=null;
+const uid=()=>Math.random().toString(36).slice(2,9);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>'&#'+c.charCodeAt(0)+';');
+const pad=r=>/^\d$/.test(r)?'0'+r:r,key=r=>/^\d+$/.test(r)?String(+r):r.toLowerCase();
+const sorted=()=>[...S.students].sort((a,b)=>a.roll.localeCompare(b.roll,undefined,{numeric:true}));
+const fmtD=d=>new Date(d+'T00:00').toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'});
+const IC={grid:'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/>',
+clip:'<rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/>',
+cal:'<path d="M8 2v4M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18m-13 5 2 2 4-4"/>',
+users:'<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/>',
+hist:'<path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 7v5l4 2"/>',
+plus:'<path d="M12 5v14M5 12h14"/>',file:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/>',
+dl:'<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>',
+set:'<path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/>',
+trash:'<path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6M10 11v6M14 11v6"/>',
+edit:'<path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/>',
+copy:'<rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>',
+check:'<path d="M20 6 9 17l-5-5"/>'};
+const ic=(n,s=18)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${IC[n]}</svg>`;
+const LOGO='<svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#202C45"/><g fill="#fff"><rect x="7" y="8" width="4" height="4" rx="1"/><rect x="13" y="8" width="4" height="4" rx="1"/><rect x="19" y="8" width="4" height="4" rx="1" opacity=".4"/><rect x="7" y="14" width="4" height="4" rx="1"/><rect x="13" y="14" width="4" height="4" rx="1" opacity=".4"/></g><path d="m17 23 3.5 3.5L27 18" stroke="#818CF8" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const btn=(l,a,o={})=>`<button class="b ${o.c||''}" data-a="${a}" ${Object.entries(o.d||{}).map(([k,v])=>`data-${k}="${esc(v)}"`).join(' ')}>${o.i?ic(o.i,16):''}${l}</button>`;
+const ibtn=(i,a,t,d={},c='')=>`<button class="ib ${c}" data-a="${a}" title="${t}" aria-label="${t}" ${Object.entries(d).map(([k,v])=>`data-${k}="${esc(v)}"`).join(' ')}>${ic(i,15)}</button>`;
+/* ---------- helpers ---------- */
+function toast(m,t){const d=document.createElement('div');d.className='ts '+(t||'');d.textContent=m;$('#t').appendChild(d);setTimeout(()=>d.remove(),3200)}
+function modal(t,body,ok,fn,danger){M=fn;$('#m').innerHTML=`<div class="mb"><div class="md" role="dialog" aria-modal="true"><h3>${t}</h3><div>${body}</div><div class="mf"><button class="b" data-m="x">${ok?'Cancel':'Close'}</button>${ok?`<button class="b ${danger?'dg':'p'}" data-m="ok">${ok}</button>`:''}</div></div></div>`;const i=$('#m input');if(i){i.focus();i.select&&i.select()}}
+const closeM=()=>{M=null;$('#m').innerHTML=''};
+const confirmM=(msg,fn,lbl='Delete')=>modal('Are you sure?',`<p style="margin:0">${msg}</p>`,lbl,fn,true);
+const inp=(id,l,v='',x='')=>`<label>${l}<input id="${id}" value="${esc(v)}" ${x}></label>`;
+function copyText(t){const ok=()=>toast('Copied to clipboard.');const fb=()=>{const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy');ok()}catch(e){toast('Copy failed. Select the text and copy it manually.','e')}a.remove()};
+ navigator.clipboard?navigator.clipboard.writeText(t).then(ok,fb):fb()}
+const hasRoll=(r,ex)=>S.students.some(s=>s.roll!==ex&&key(s.roll)===key(r));
+const done=s=>S.cols.filter(c=>(S.sub[s.roll]||{})[c.id]).length;
+const range=(a,b)=>Array.from({length:b-a+1},(_,i)=>a+i);
+/* ---------- reports ---------- */
+function mkSum(){const rows=sorted().map(s=>({roll:s.roll,name:s.name,pend:S.cols.filter(c=>!(S.sub[s.roll]||{})[c.id]).map(c=>c.name)})).filter(r=>r.pend.length);
+ const tot=S.students.length*S.cols.length;return{date:today(),total:S.students.length,rows,tot,done:tot-rows.reduce((a,r)=>a+r.pend.length,0)}}
+function calc(r){const k=Object.keys(r.marks).map(Number).sort((a,b)=>a-b);r.total=k.length;r.absentList=k.filter(x=>r.marks[x]==='a');r.absent=r.absentList.length;r.present=r.total-r.absent;r.pct=r.total?(r.present/r.total*100).toFixed(1).replace(/\.0$/,''):'0';return r}
+const isAtt=r=>!!r.marks, getR=k=>k==='sum'?U.sum:k==='rep'?U.rep:(S.hist.find(h=>h.id===k)||{}).data;
+const q=v=>`"${String(v).replace(/"/g,'""')}"`;
+const txt=r=>isAtt(r)?`Attendance Summary\nDate: ${fmtD(r.date)}\nClass: ${r.cls||'-'}\n\nTotal Students: ${r.total}\nPresent: ${r.present}\nAbsent: ${r.absent}\nAttendance: ${r.pct}%\n\nAbsent Roll Numbers: ${r.absentList.map(pad).join(', ')||'None'}`
+ :`Pending Submission Report (${fmtD(r.date)})\nStudents with pending work: ${r.rows.length} of ${r.total}\nCompleted submissions: ${r.done} of ${r.tot}\n\n`+(r.rows.length?r.rows.map(x=>`${pad(x.roll)} | ${x.name} | ${x.pend.join(', ')}`).join('\n'):'Everyone has submitted all work.');
+const csv=r=>isAtt(r)?'Date,Class,Roll No.,Status\n'+Object.keys(r.marks).map(Number).sort((a,b)=>a-b).map(k=>[r.date,q(r.cls||''),pad(String(k)),r.marks[k]==='p'?'Present':'Absent'].join(',')).join('\n')
+ :'Roll No.,Student,Pending Work\n'+r.rows.map(x=>[q(pad(x.roll)),q(x.name),q(x.pend.join(', '))].join(',')).join('\n');
+const stat=(l,v)=>`<div class="st"><span>${l}</span><b>${v}</b></div>`;
+const body=r=>isAtt(r)?`<h3>Attendance Summary</h3><p class="mu">${fmtD(r.date)}${r.cls?', '+esc(r.cls):''}</p><div class="sg">${stat('Total Students',r.total)}${stat('Present',r.present)}${stat('Absent',r.absent)}${stat('Attendance',r.pct+'%')}</div><p><b>Absent Roll Numbers:</b> ${r.absentList.map(pad).join(', ')||'None'}</p>`
+ :`<h3>Pending Submission Report</h3><p class="mu">${fmtD(r.date)}</p><div class="sg">${stat('Students with pending work',r.rows.length+' of '+r.total)}${stat('Completed submissions',r.done+' of '+r.tot)}</div>`+(r.rows.length?`<div class="tw"><table><thead><tr><th>Roll No.</th><th>Student</th><th>Pending Work</th></tr></thead><tbody>${r.rows.map(x=>`<tr><td>${esc(pad(x.roll))}</td><td>${esc(x.name)}</td><td style="white-space:normal">${esc(x.pend.join(', '))}</td></tr>`).join('')}</tbody></table></div>`:'<p class="em">Everyone has submitted all work.</p>');
+const rep=(r,k,sv)=>`<div class="card" id="rep">${body(r)}<div class="row" style="margin:16px 0 0">${btn('Copy '+(isAtt(r)?'Report':'Summary'),'copy',{i:'copy',d:{k}})}${btn('Export PDF','pdf',{i:'dl',d:{k}})}${btn('Export CSV','csv',{i:'dl',d:{k}})}${sv?btn(isAtt(r)?'Save Attendance History':'Save to History',sv,{c:'p',i:'check'}):''}</div></div>`;
+/* ---------- views ---------- */
+const head=()=>`<header><div class="br">${LOGO}<b>C</b></div><div class="dt">${new Date().toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}</div><span class="tn">${esc(S.teacher)}</span>${ibtn('set','set','Settings')}</header>`;
+const NAV=[['ov','Overview','grid'],['rk','Record Keeper','clip'],['at','Attendance','cal'],['sl','Student List','users'],['hi','History','hist']];
+const nav=()=>`<nav>${NAV.map(([v,l,i])=>`<button class="${U.view===v?'on':''}" data-a="go" data-v="${v}">${ic(i,17)}${l}</button>`).join('')}</nav>`;
+const addForm=()=>`<div class="row af"><label>Roll No.<input id="ar" style="width:90px" maxlength="6"></label><label>Student name<input id="an" style="width:220px" maxlength="60"></label>${btn('Add Student','addS',{c:'p',i:'plus'})}</div>`;
+const ovV=()=>{const n=S.students.length,full=S.cols.length?S.students.filter(s=>done(s)===S.cols.length).length:0;const t=S.hist.filter(h=>h.type==='att'&&h.date===today()).sort((a,b)=>b.ts-a.ts)[0];
+ return`<h2>Overview</h2><p class="mu">Here’s where your class stands today.</p><div class="grid4">${stat('Total Students',n)}${stat('Records Completed',full)}${stat('Pending Submissions',n-full)}${stat('Today’s Attendance',t?t.data.pct+'%':'Not taken')}</div>
+ <div class="act"><button class="ac" data-a="go" data-v="rk">${ic('clip',28)}<b>Manage Student Records</b><span>Track assignments, practicals and documents.</span></button><button class="ac" data-a="go" data-v="at">${ic('cal',28)}<b>Take Attendance</b><span>Tap roll numbers and finish in under a minute.</span></button></div>`};
+const rkV=()=>{const ss=sorted(),N=S.cols.length,f=U.filter;
+ const fl=ss.filter(s=>{const d=done(s);return f==='all'||(f==='sub'&&d>0)||(f==='not'&&d<N)||(f==='full'&&N>0&&d===N)});
+ const cols=S.cols.map(c=>{const all=ss.length&&ss.every(s=>(S.sub[s.roll]||{})[c.id]);return`<th class="c"><div class="ch"><span>${esc(c.name)}</span>${ibtn('edit','ren','Rename column',{id:c.id})}${ibtn('trash','delc','Delete column',{id:c.id},'dg')}</div><button class="lk" data-a="all" data-id="${c.id}">${all?'Unmark all':'Mark all submitted'}</button></th>`}).join('');
+ const rows=fl.map(s=>`<tr><td class="sk">${esc(pad(s.roll))}</td><td class="sk2">${esc(s.name)}</td>${S.cols.map(c=>`<td class="c"><input type="checkbox" data-a="tg" data-r="${esc(s.roll)}" data-id="${c.id}" aria-label="${esc(s.name)}, ${esc(c.name)}" ${(S.sub[s.roll]||{})[c.id]?'checked':''}></td>`).join('')}<td>${ibtn('trash','dels','Remove student',{r:s.roll},'dg')}</td></tr>`).join('');
+ return`<h2>Record Keeper</h2><p class="mu">Tick each submission as it comes in.</p>${addForm()}<div class="row"><label>Show<select data-f="filter">${[['all','All Students'],['sub','Submitted'],['not','Not Submitted'],['full','Fully Completed']].map(([v,l])=>`<option value="${v}" ${f===v?'selected':''}>${l}</option>`).join('')}</select></label><div class="sp">${btn('Add Column','addc',{c:'p',i:'plus'})}</div></div>`+
+ (ss.length?`<div class="tw"><table><thead><tr><th class="sk">Roll No.</th><th class="sk2">Student Name</th>${cols}<th></th></tr></thead><tbody>${rows||`<tr><td colspan="${N+3}" class="em">No students match this filter.</td></tr>`}</tbody></table></div>`:'<div class="card em">No students yet. Add a roll number and name above to start.</div>')+
+ `<div class="row" style="margin-top:20px">${btn('Generate Summary','gen',{c:'p',i:'file'})}</div><div id="sum">${U.sum?rep(U.sum,'sum','savesum'):''}</div>`};
+const atV=()=>{const a=S.att,rolls=range(a.start,a.end),mk=rolls.filter(r=>a.marks[r]==='p').length,ab=rolls.filter(r=>a.marks[r]==='a').length;
+ return`<h2>Attendance</h2><p class="mu">Tap a roll number to cycle: present, absent, not marked.</p><div class="card"><div class="row" style="margin:0"><label>Date<input type="date" data-f="date" value="${a.date}"></label><label>Class / Division<input data-f="cls" list="dv" value="${esc(a.cls)}" style="width:140px" placeholder="e.g. Div A"><datalist id="dv">${'ABCDEF'.split('').map(x=>`<option value="Division ${x}">`).join('')}</datalist></label><label>Students<input type="number" data-f="count" value="${rolls.length}" min="1" max="300" style="width:90px"></label><label>First roll<input type="number" data-f="start" value="${a.start}" min="1" style="width:90px"></label><label>Last roll<input type="number" data-f="end" value="${a.end}" max="300" style="width:90px"></label></div></div>
+ <div class="row">${btn('Mark All Present','allp',{i:'check'})}${btn('Reset Attendance','rst',{c:'dg'})}<div class="lg sp"><span>Not marked ${rolls.length-mk-ab}</span><span class="p">Present ${mk}</span><span class="a">Absent ${ab}</span></div></div>
+ <div class="gr">${rolls.map(r=>{const m=a.marks[r],nm=S.students.find(s=>key(s.roll)===String(r));return`<button class="rb ${m||''}" data-a="mk" data-r="${r}" title="${nm?esc(nm.name):'Roll '+r}" aria-label="Roll ${r}, ${m==='p'?'present':m==='a'?'absent':'not marked'}">${pad(String(r))}<i>${m==='p'?'✓':m==='a'?'✕':''}</i></button>`}).join('')}</div>
+ <div class="row">${btn('Submit Attendance','sub',{c:'p',i:'check'})}</div>${U.rep?rep(U.rep,'rep','saveatt'):''}`};
+const slV=()=>`<h2>Student List</h2><p class="mu">One list shared by the record keeper and attendance.</p>${addForm()}<div class="row">${btn('Add Many at Once','bulk',{i:'users'})}</div>`+
+ (S.students.length?`<div class="tw"><table><thead><tr><th>Roll No.</th><th>Student Name</th><th></th></tr></thead><tbody>${sorted().map(s=>`<tr><td>${esc(pad(s.roll))}</td><td>${esc(s.name)}</td><td style="text-align:right">${ibtn('edit','edits','Edit student',{r:s.roll})} ${ibtn('trash','dels','Remove student',{r:s.roll},'dg')}</td></tr>`).join('')}</tbody></table></div>`:'<div class="card em">Your class list is empty. Add students above.</div>');
+const hiV=()=>{const l=S.hist.filter(h=>!U.hDate||h.date===U.hDate).sort((a,b)=>b.ts-a.ts);
+ return`<h2>History</h2><p class="mu">Saved attendance and submission reports.</p><div class="row"><label>Filter by date<input type="date" data-f="hDate" value="${U.hDate}"></label>${U.hDate?btn('Clear filter','clh'):''}</div><div class="card">${l.length?l.map(h=>{const r=h.data;return`<div class="hi"><span class="tag ${isAtt(r)?'t':'s'}">${isAtt(r)?'Attendance':'Submissions'}</span><div class="x"><b>${isAtt(r)?'Attendance'+(r.cls?', '+esc(r.cls):''):'Pending Submission Report'}</b><br><span class="mu" style="margin:0">${fmtD(h.date)}: ${isAtt(r)?`${r.present} present, ${r.absent} absent (${r.pct}%)`:`${r.rows.length} of ${r.total} students pending`}</span></div>${btn(isAtt(r)?'View / Edit':'View','hv',{d:{id:h.id}})}${ibtn('trash','hd','Delete record',{id:h.id},'dg')}</div>`}).join(''):'<div class="em">No saved reports'+(U.hDate?' on this date':' yet')+'.</div>'}</div>`};
+const V={ov:ovV,rk:rkV,at:atV,sl:slV,hi:hiV};
+function render(){const sc=$('.tw'),l=sc?sc.scrollLeft:0;$('#app').innerHTML=head()+nav()+`<main>${V[U.view]()}</main>`;const t=$('.tw');if(t)t.scrollLeft=l}
+/* ---------- actions ---------- */
+function addCol(){modal('Add column',inp('mi','Column title','Assignment '+(S.cols.length+1)),'Add column',()=>{const n=$('#mi').value.trim();if(!n){toast('Enter a column title.','e');return false}if(S.cols.some(c=>c.name.toLowerCase()===n.toLowerCase())){toast('A column with that title already exists.','e');return false}S.cols.push({id:uid(),name:n});save();render();toast('Column added.')})}
+const A={
+go(d){U.view=d.v;render();scrollTo(0,0)},
+set(){modal('Settings',inp('mi','Teacher name',S.teacher)+`<button class="b dg" data-a="wipe">${ic('trash',16)}Erase all data</button>`,'Save',()=>{S.teacher=$('#mi').value.trim()||'Teacher';save();render();toast('Settings saved.')})},
+wipe(){confirmM('This permanently erases every student, record and report on this device.',()=>{S=fresh();U={view:'ov',filter:'all',sum:null,rep:null,hDate:''};save();render();toast('All data erased.')},'Erase everything')},
+addS(){const r=$('#ar').value.trim(),n=$('#an').value.trim();if(!r||!n)return toast('Enter both a roll number and a name.','e');if(!/^[A-Za-z0-9-]{1,6}$/.test(r))return toast('Roll numbers can use letters, digits and dashes (up to 6 characters).','e');if(hasRoll(r))return toast('Roll number '+pad(r)+' is already in use.','e');S.students.push({roll:r,name:n});save();render();toast('Student added.');$('#ar').focus()},
+edits(d){modal('Edit student',inp('mi','Roll No.',d.r)+inp('mn','Name',S.students.find(s=>s.roll===d.r).name),'Save',()=>{const r=$('#mi').value.trim(),n=$('#mn').value.trim();if(!r||!n){toast('Enter both a roll number and a name.','e');return false}if(!/^[A-Za-z0-9-]{1,6}$/.test(r)){toast('Use up to 6 letters, digits or dashes for the roll number.','e');return false}if(hasRoll(r,d.r)){toast('Roll number '+pad(r)+' is already in use.','e');return false}
+ if(r!==d.r&&S.sub[d.r]){S.sub[r]=S.sub[d.r];delete S.sub[d.r]}const s=S.students.find(s=>s.roll===d.r);s.roll=r;s.name=n;save();render();toast('Student updated.')})},
+dels(d){const s=S.students.find(s=>s.roll===d.r);confirmM('Remove <b>'+esc(s.name)+'</b> (roll '+esc(pad(s.roll))+') and their submission ticks?',()=>{S.students=S.students.filter(x=>x!==s);delete S.sub[s.roll];save();render();toast('Student removed.')},'Remove')},
+bulk(){modal('Add many students','<label>One student per line: roll number, then name<textarea id="bt" placeholder="1 Aarav Shah&#10;2, Diya Patel"></textarea></label>','Add students',()=>{let add=0,bad=[];$('#bt').value.split('\n').forEach(l=>{if(!l.trim())return;const m=l.match(/^\s*([A-Za-z0-9-]{1,6})[\s,.:;-]+(.+?)\s*$/);if(!m||hasRoll(m[1])){bad.push(l.trim());return}S.students.push({roll:m[1],name:m[2].slice(0,60)});add++});if(!add&&bad.length){toast('No students added. Check for missing names or duplicate roll numbers.','e');return false}save();render();toast(add+' added'+(bad.length?', '+bad.length+' skipped (duplicate or unreadable).':'.'),bad.length?'e':'')})},
+addc:addCol,
+ren(d){const c=S.cols.find(c=>c.id===d.id);modal('Rename column',inp('mi','Column title',c.name),'Save',()=>{const n=$('#mi').value.trim();if(!n){toast('Enter a column title.','e');return false}if(S.cols.some(x=>x!==c&&x.name.toLowerCase()===n.toLowerCase())){toast('A column with that title already exists.','e');return false}c.name=n;save();render();toast('Column renamed.')})},
+delc(d){const c=S.cols.find(c=>c.id===d.id);confirmM('Delete the column <b>'+esc(c.name)+'</b> and all its ticks?',()=>{S.cols=S.cols.filter(x=>x!==c);Object.values(S.sub).forEach(o=>delete o[c.id]);save();render();toast('Column deleted.')})},
+all(d){const all=S.students.every(s=>(S.sub[s.roll]||{})[d.id]);if(!S.students.length)return toast('Add students first.','e');S.students.forEach(s=>{(S.sub[s.roll]=S.sub[s.roll]||{})[d.id]=!all});save();render()},
+tg(d){const o=S.sub[d.r]=S.sub[d.r]||{};o[d.id]=!o[d.id];save();render()},
+gen(){if(!S.students.length)return toast('Add students before generating a summary.','e');if(!S.cols.length)return toast('Add at least one submission column.','e');U.sum=mkSum();render();$('#sum').scrollIntoView({behavior:'smooth'});toast('Summary generated.')},
+savesum(){S.hist.push({id:uid(),type:'sub',date:today(),ts:Date.now(),data:U.sum});save();toast('Report saved to History.')},
+mk(d){const m=S.att.marks,c=m[d.r];if(!c)m[d.r]='p';else if(c==='p')m[d.r]='a';else delete m[d.r];U.rep=null;save();render()},
+allp(){range(S.att.start,S.att.end).forEach(r=>S.att.marks[r]='p');U.rep=null;save();render()},
+rst(){if(!Object.keys(S.att.marks).length)return toast('Nothing to reset yet.','e');confirmM('Clear every present and absent mark?',()=>{S.att.marks={};U.rep=null;save();render();toast('Attendance reset.')},'Reset')},
+sub(){const a=S.att,rolls=range(a.start,a.end),un=rolls.filter(r=>!a.marks[r]);if(!a.date)return toast('Choose a date first.','e');
+ const fin=()=>{const m={};rolls.forEach(r=>m[r]=a.marks[r]||'a');a.marks=m;U.rep=calc({date:a.date,cls:a.cls,marks:{...m}});save();render();$('#rep').scrollIntoView({behavior:'smooth'});toast('Attendance submitted.')};
+ un.length?modal('Some students are not marked',`<p style="margin:0">${un.length} not marked: ${un.slice(0,30).map(pad).join(', ')}${un.length>30?'…':''}.<br>Unmarked students are never counted as present. Mark them absent and submit?</p>`,'Mark absent and submit',()=>{fin()},true):fin()},
+saveatt(){const r=U.rep,i=S.hist.findIndex(h=>h.type==='att'&&h.date===r.date&&h.cls===r.cls);const put=()=>{const id=r.sid||(i>=0?S.hist[i].id:uid());r.sid=id;const rec={id,type:'att',date:r.date,cls:r.cls,ts:Date.now(),data:{...r}};const j=S.hist.findIndex(h=>h.id===id);j>=0?S.hist[j]=rec:S.hist.push(rec);save();toast('Attendance saved to History.')};
+ i>=0&&!r.sid?confirmM('A report for '+fmtD(r.date)+(r.cls?', '+esc(r.cls):'')+' already exists. Replace it?',put,'Replace'):put()},
+copy(d){copyText(txt(getR(d.k)))},
+pdf(d){$('#print').innerHTML=body(getR(d.k));print()},
+csv(d){const r=getR(d.k),c=csv(r),nm=(isAtt(r)?'attendance-':'pending-')+r.date+'.csv';modal('Export CSV',`<p class="mu" style="margin-bottom:8px">Download the file, or copy the text below into a spreadsheet.</p><textarea id="ct" readonly>${esc(c)}</textarea>`,'Download .csv',()=>{try{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([c],{type:'text/csv'}));a.download=nm;document.body.appendChild(a);a.click();a.remove();toast('Download started. If nothing happens, copy the text instead.')}catch(e){copyText(c)}return false})},
+hv(d){const h=S.hist.find(h=>h.id===d.id),r=h.data;modal(isAtt(r)?'Attendance report':'Submission report',body(r)+(isAtt(r)?`<p class="mu" style="margin-bottom:6px">Tap a roll number to switch present and absent.</p><div class="gr">${Object.keys(r.marks).map(Number).sort((a,b)=>a-b).map(k=>`<button class="rb ${r.marks[k]}" data-a="he" data-id="${h.id}" data-r="${k}">${pad(String(k))}<i>${r.marks[k]==='p'?'✓':'✕'}</i></button>`).join('')}</div>`:'')+`<div class="row" style="margin:12px 0 0">${btn('Copy','copyh',{i:'copy',d:{id:h.id}})}${btn('CSV','csv',{i:'dl',d:{k:h.id}})}${btn('PDF','pdf',{i:'dl',d:{k:h.id}})}</div>`)},
+copyh(d){copyText(txt(getR(d.id)))},
+he(d){const h=S.hist.find(h=>h.id===d.id),m=h.data.marks;m[d.r]=m[d.r]==='p'?'a':'p';calc(h.data);save();A.hv(d);render()},
+hd(d){const h=S.hist.find(h=>h.id===d.id);confirmM('Delete the '+(isAtt(h.data)?'attendance':'submission')+' report from '+fmtD(h.date)+'?',()=>{S.hist=S.hist.filter(x=>x!==h);save();render();toast('Record deleted.')})},
+clh(){U.hDate='';render()}};
+const setR=(s,e)=>{if(!(s>=1&&e<=300&&e>=s)){toast('Use roll numbers from 1 to 300, with the last roll after the first.','e');return render()}S.att.start=s;S.att.end=e;Object.keys(S.att.marks).forEach(k=>{if(k<s||k>e)delete S.att.marks[k]});U.rep=null;save();render()};
+const F={filter(v){U.filter=v;render()},hDate(v){U.hDate=v;render()},date(v){S.att.date=v||today();U.rep=null;save();render()},cls(v){S.att.cls=v.trim();U.rep=null;save()},
+ start:v=>setR(Math.floor(+v),S.att.end),end:v=>setR(S.att.start,Math.floor(+v)),count:v=>setR(S.att.start,S.att.start+Math.floor(+v)-1)};
+document.addEventListener('click',e=>{const m=e.target.closest('[data-m]');if(m){if(m.dataset.m==='x')closeM();else{const f=M;if(!f||f()!==false)closeM()}return}
+ if(e.target.classList&&e.target.classList.contains('mb')){closeM();return}
+ const b=e.target.closest('[data-a]');if(b&&A[b.dataset.a])A[b.dataset.a](b.dataset)});
+document.addEventListener('change',e=>{const f=e.target.dataset.f;if(f&&F[f])F[f](e.target.value)});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeM();if(e.key==='Enter'){if(e.target.closest('#m input')){e.preventDefault();const o=$('#m [data-m=ok]');o&&o.click()}else if(e.target.closest('.af'))A.addS()}});
+fetch('/api/state').then(r=>r.json()).then(d=>{if(d&&d.students){S=Object.assign(fresh(),d);if(!Object.keys(S.att.marks).length)S.att.date=today()}}).catch(()=>toast('Could not reach the server.','e')).finally(render);
+</script></body></html>

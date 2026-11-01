@@ -1,0 +1,23 @@
+# Maven
+target/
+
+# Local database files
+data/*.mv.db
+data/*.trace.db
+
+# Java logs and crash dumps
+*.log
+hs_err_pid*
+
+# IDE files
+.idea/
+*.iml
+.project
+.classpath
+.settings/
+.vscode/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
